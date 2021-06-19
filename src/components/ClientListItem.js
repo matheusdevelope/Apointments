@@ -1,6 +1,7 @@
 import React from 'react'
 import './ClientListItem.css'
 export default ({onClick, active, data})=>{
+  
     return(
     <div className={`ClientListItem ${active?'active':''}`}
          onClick={onClick}
@@ -13,7 +14,7 @@ export default ({onClick, active, data})=>{
             </div>
             <div className='ClientListItemLine'>
                 <div className='ClientListItemService'>
-                    <p>Tattoo no Septo e umbigo Tattoo no Septo e umbigo Tattoo no Septo e umbigoTattoo no Septo e umbigo Tattoo no Septo e umbigo Tattoo no Septo e umbigoTattoo no Septo e umbigo</p>
+                    <p>{data.Profile}</p>
                 </div>
             </div>
         </div>

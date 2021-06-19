@@ -1,4 +1,4 @@
-*{box-sizing: border-box;}
+*{box-sizing:border-box;}
 
 body{
 background-color: #fff;
@@ -11,7 +11,7 @@ font-family: 'Segoe UI', Helvetica Neue, Helvetica, Lucida Grande, Arial;
   background-color: #ededed;
 }
 .SideBar{
-width: 35%;
+width: 25%;
 max-width: max-content 415px;
 display: flex;
 flex-direction: column;
@@ -49,7 +49,7 @@ padding: 5px 15px;
 }
 .SearchInput{
 background-color: #fff;
-height: 40px;
+height: 30px;
 border-radius: 20px;
 display:flex;
 align-items: center;

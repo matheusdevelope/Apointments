@@ -2,7 +2,8 @@
     display: flex;
     cursor: pointer;
     align-items: center;
-    height: 70px;
+    height:55px;
+   
 }
 .ClientListItem:hover{
     background-color: #f5f5f5;
@@ -11,8 +12,8 @@
     background-color: #ebebeb;
 }
 .ClientListItemAvatar{
-    height:50px;
-    width: 50px;
+    height:40px;
+    width: 40px;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -36,15 +37,15 @@
     width: 100%;
 }
 .ClientListItemName{
-font-size: 17px;
+font-size: 15px;
 color: #000;
 }
 .ClientListItemDate{
-font-size: 12px;
-color: #758;
+font-size: 10px;
+color: #000;
 }
 .ClientListItemService{
-font-size: 14px;
+font-size: 10px;
 color: #999;
 display: flex;
 width: 100%;

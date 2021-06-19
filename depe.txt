@@ -1,3 +1,8 @@
+popular as dependencias:
+npm update react
+
+
+New PRoject:
 npx create-react-app studio
 
 npm install @material-ui/core @material-ui/icons
