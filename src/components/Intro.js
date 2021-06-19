@@ -1,5 +1,5 @@
 import React from 'react'
-import './Apointments.css'
+import './Intro.css'
 
 export  default ()=>{
     return(
