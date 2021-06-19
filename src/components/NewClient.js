@@ -9,7 +9,7 @@ export default ({show, setShow})=>{
     const handleClose = ()=>{setShow(false)}
 
     return(
-        <div className='NewClient' style={{left: show?0:-415}}>
+        <div className='NewClient' style={{left: show?0:-500}}>
             <div className='NewClientHead'>
                 <div className='NewClientTitle'>Novo Cliente</div>
                 <div className='NewClientBackButton' onClick={handleClose}>

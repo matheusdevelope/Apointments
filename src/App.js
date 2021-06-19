@@ -8,6 +8,7 @@ import Intro from './components/Intro'
 import ClientView from './components/ClientView.js'
 import NewClient from './components/NewClient.js'
 import Menu from './components/Menu.js'
+import API from './components/api.js'
 export default ()=>{
 
   const [clientlist, setClienList] = useState([
@@ -23,7 +24,10 @@ export default ()=>{
   const [shownewmenu, setShowMenu] = useState(false)
   const status = ()=>(shownewmenu?false:true)
   const handleOpenMenu = ()=>{setShowMenu(status)}
-   
+  
+  
+
+
   return(
   <div className='AppWindow'>
 
@@ -52,7 +56,7 @@ export default ()=>{
         <input type="search" placeholder="Procurar Cliente"/>
         </div>
         <div onClick={handleOpenNewClient} className='HeaderBNTAdd'> 
-            <AddCircleIcon style={{color:'#919191'}}/> 
+            <AddCircleIcon style={{color:'#919191', viewBox:'0 0 50 50'}}/> 
             </div>
       </div>
  

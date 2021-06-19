@@ -22,7 +22,7 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15px;
+  padding: 0 4%;
 }
 .HeaderAvatar{
   height: 40px;
@@ -48,24 +48,16 @@ display: flex;
   cursor: pointer;
   margin-left: 10px;
 }
-.HeaderBNTAdd{
-  height: 40px;
-  width: 40px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  margin-left: 10px;
-  margin-right: 2px;
-}
+
 .Search{
 background-color: #f6f6f6;
 border-bottom: 1px solid #eee;
-padding: 5px 15px ;
+height: 60px;
 display: flex;
 justify-content: space-between;
 align-items: center;
+padding: 0 4%;
+
 }
 .SearchInput{
 background-color: #fff;
@@ -73,8 +65,9 @@ height: 30px;
 border-radius: 20px;
 display:flex;
 align-items: center;
-padding: 0 10px;
-width: 100%;
+padding-left: 10px;
+flex: 1;
+
 }
 .SearchInput input{
 flex: 1;
@@ -82,6 +75,18 @@ border: 0;
 outline: 0;
 background-color: transparent;
 margin-left: 10px;
+margin-right: -20px;
+}
+.HeaderBNTAdd{
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+ 
+  
 }
 .ClientList{
   flex: 1;

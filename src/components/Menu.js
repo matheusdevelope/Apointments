@@ -5,7 +5,7 @@ export default ({show, setShow})=>{
     const handleCloseMenu = ()=>{setShow(false)}
 
     return(
-        <div style={{left: show?0:-415}} className='MenuArea'>
+        <div style={{left: show?0:-500}} className='MenuArea'>
             <div onClick={handleCloseMenu} className='MenuItem'>
                 Agendamentos
             </div>
