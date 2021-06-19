@@ -11,8 +11,8 @@ font-family: 'Segoe UI', Helvetica Neue, Helvetica, Lucida Grande, Arial;
   background-color: #ededed;
 }
 .SideBar{
-width: 25%;
-max-width: max-content 415px;
+width: 30%;
+max-width: max-content 400px;
 display: flex;
 flex-direction: column;
 border-right: 1px solid #ddd;
@@ -30,6 +30,11 @@ header{
   border-radius: 20px;
   cursor: pointer;
 }
+.NameCompany{
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+}
 .HeaderButtons{
 display: flex;
 }
@@ -41,11 +46,26 @@ display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin-left: 10px;
+}
+.HeaderBNTAdd{
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 2px;
 }
 .Search{
 background-color: #f6f6f6;
 border-bottom: 1px solid #eee;
-padding: 5px 15px;
+padding: 5px 15px ;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 .SearchInput{
 background-color: #fff;
@@ -54,6 +74,7 @@ border-radius: 20px;
 display:flex;
 align-items: center;
 padding: 0 10px;
+width: 100%;
 }
 .SearchInput input{
 flex: 1;

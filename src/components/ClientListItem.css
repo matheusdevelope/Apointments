@@ -3,7 +3,7 @@
     cursor: pointer;
     align-items: center;
     height:55px;
-   
+    
 }
 .ClientListItem:hover{
     background-color: #f5f5f5;

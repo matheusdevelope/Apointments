@@ -1,10 +1,12 @@
 import React from 'react'
 import './Menu.css'
 
-export default ()=>{
+export default ({show, setShow})=>{
+    const handleCloseMenu = ()=>{setShow(false)}
+
     return(
-        <div className='MenuArea'>
-            <div className='MenuItem'>
+        <div style={{left: show?0:-415}} className='MenuArea'>
+            <div onClick={handleCloseMenu} className='MenuItem'>
                 Agendamentos
             </div>
             <div className='MenuItem'>
