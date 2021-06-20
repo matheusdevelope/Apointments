@@ -59,18 +59,8 @@ export default ()=>{
             <AddCircleIcon style={{color:'#919191', viewBox:'0 0 50 50'}}/> 
             </div>
       </div>
- 
-      <div className='ClientList'>
-        {clientlist.map((item,key)=>(
-          <ClientListItem
-          key={key}
-          data = {item}
-          active= {activeclient.ClientId === clientlist[key].ClientId}
-          onClick={()=>setActiveClient(clientlist[key])}
-          
-          />
-        ))}
-      </div>
+      
+    <API/>
     </div>
 
     <div className='ContentArea'>
@@ -85,3 +75,17 @@ export default ()=>{
   </div>
   )
 }
+
+/*
+      <div className='ClientList'>
+        {clientlist.map((item,key)=>(
+          <ClientListItem
+          key={key}
+          data = {item}
+          active= {activeclient.ClientId === clientlist[key].ClientId}
+          onClick={()=>setActiveClient(clientlist[key])}
+          
+          />
+        ))}
+      </div>
+       */

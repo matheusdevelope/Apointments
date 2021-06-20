@@ -1,27 +1,26 @@
-import React, {useState,useEffect}from 'react'
+import React, {useEffect, useState}from 'react'
+import ClientListItem from './ClientListItem2.js'
 
-function Item(props) {
-    return <li>{props.value}</li>;
- }
+const ViewClient =()=>{
+    const [clients, setClients] = useState(null)
 
-export default ()=>{
-    
-    const [car, setCar] = useState(true)
-    const [dados, setDados] = useState([])
-
-    useEffect(
-        ()=>{
-            fetch('http://localhost:3333/servicesbyclient/1')
-            .then((resp)=>resp.json())
-            .then((json)=>setDados(json.services))
-            .catch(()=>(alert('Erro ao carregar')))
-            .finally(()=>setCar(false))
-        },[]
-    )
+    useEffect(()=>{
+        fetch('http://26.48.46.50:3333/users')
+        .then(res => {
+            return res.json()
+        })
+        .then(data=>{
+            setClients(data)
+            console.log(data)
+        })
+    },[])
 
     return(
-    <ul>
-        {dados.map((dados)=><Item key={item.key} value={item}/>)}
-    </ul>
+        <div className='View'>
+            {clients &&<ClientListItem clients={clients} title='Cliente!'/>}
+        </div>
     )
+
 }
+
+export default ViewClient
