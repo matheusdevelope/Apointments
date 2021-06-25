@@ -6,15 +6,15 @@ export default ({onClick, active, data})=>{
     <div className={`ClientListItem ${active?'active':''}`}
          onClick={onClick}
     >
-        <img className='ClientListItemAvatar' src= {data.Profile} />
+        <img className='ClientListItemAvatar' src= 'https://image.freepik.com/vetores-gratis/perfil-de-avatar-de-homem-no-icone-redondo_24640-14044.jpg' />
         <div className='ClientListItemLines'>
             <div className='ClientListItemLine'>
-                <div className='ClientListItemName'>{data.Name}</div>
-                <div className = 'ClientListItemDate'>09:30</div>
+                <div className='ClientListItemName'>{data.name}</div>
+                <div className = 'ClientListItemDate'>{data.id}</div>
             </div>
             <div className='ClientListItemLine'>
                 <div className='ClientListItemService'>
-                    <p>{data.Profile}</p>
+                    <p>{data.phone}</p>
                 </div>
             </div>
         </div>

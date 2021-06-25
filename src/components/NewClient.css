@@ -13,7 +13,7 @@
     }
 .NewClientHead{
     display: flex;
-    background-color: #2a796e;
+    background-color: rgba(77, 141, 224, 0.904);
     align-items: center;
     margin-bottom: 3px;
     height: 60px;
@@ -45,7 +45,7 @@
     align-items: flex-start;
 }
 .NewClientSave{
-    background-color: #2a796e;
+    background-color: rgba(77, 141, 224, 0.904);
     height: 30px;
     border-radius: 10px;
     display: flex;

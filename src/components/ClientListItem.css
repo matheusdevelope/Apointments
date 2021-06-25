@@ -10,7 +10,7 @@
 }
 .ClientListItem.active{
     background-color: #ebebeb;
-}
+} 
 .ClientListItemAvatar{
     height:40px;
     width: 40px;
