@@ -5,17 +5,18 @@ background-color: #fff;
 margin: 0;
 font-family: 'Segoe UI', Helvetica Neue, Helvetica, Lucida Grande, Arial;
 }
-.AppWindow{
-  display: flex;
-  height: 100vh;
-  background-color: #ededed;
-}
+
 .SideBar{
-width: 30%;
+width: 35%;
 max-width: max-content 400px;
 display: flex;
 flex-direction: column;
 border-right: 1px solid #ddd;
+}
+.AppWindow{
+  display: flex;
+  height: 100vh;
+  background-color: #ededed;
 }
 header{
   height: 60px;
@@ -23,6 +24,7 @@ header{
   justify-content: space-between;
   align-items: center;
   padding: 0 4%;
+  
 }
 .HeaderAvatar{
   height: 40px;
@@ -31,32 +33,30 @@ header{
   cursor: pointer;
 }
 .NameCompany{
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   color: #000;
 }
 .HeaderButtons{
-display: flex;
+margin: 0;
+justify-content: center;
+  align-items: center;
 }
 .HeaderBNT{
   height: 40px;
   width: 40px;
-  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-left: 10px;
 }
 .HeaderBNTHome{
   height: 40px;
   width: 40px;
-  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-left: 10px;
 }
 
 .Search{

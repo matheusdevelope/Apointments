@@ -16,7 +16,7 @@ export default ({show, setShow, setClients})=>{
       } 
 
     const addNewClient = async()=>{
-    const Post = await fetch('http://localhost:3200/clients', {
+    const Post = await fetch('http://26.48.46.50:3200/clients', {
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'},

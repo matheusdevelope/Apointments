@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react'
 import './Apointments.css'
 
 export default ()=>{
-    const [services, setServices] = useState ()
+    const [services, setServices] = useState ([])
     useEffect(()=>{
-        fetch('http://127.0.0.1:3200/services')
+        fetch('http://26.48.46.50:3200/services')
         .then(res => {
             return res.json()
         })
         .then(data=>{
             setServices(data)
+
         })
     },[])
 return(

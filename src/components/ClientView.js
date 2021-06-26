@@ -10,7 +10,7 @@ export default ({data, id})=>{
     }
     const [servicesclient, setServicesClient] = useState([])
     useEffect(()=>{
-      fetch(`http://127.0.0.1:3200/servicesbyclient/${id}`)
+      fetch(`http://26.48.46.50:3200/servicesbyclient/${id}`)
       .then(res => {
           return res.json()
       })
