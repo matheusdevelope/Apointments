@@ -3,6 +3,7 @@
 body{
 background-color: #fff;
 margin: 0;
+
 font-family: 'Segoe UI', Helvetica Neue, Helvetica, Lucida Grande, Arial;
 }
 .SideBar{
@@ -118,8 +119,8 @@ flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  border-bottom: 6px solid #4adf83;
+  height: 100vh;
+  border-bottom: 6px solid #282c2a;
 }
 .Intro h1{
   font-size: 32px;

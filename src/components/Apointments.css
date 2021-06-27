@@ -1,12 +1,15 @@
-
+ 
 .ContentArea{
-    flex-direction: column;
-    flex: 1;
-}
-.Area{
-    flex: 1;
-    flex-direction: row;
     display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 30%;
+    top: 0;
+    right:0;
+    transition: all ease 0.3s;
+    background-color: #ededed;
 }
 .ServiceArea{ 
     height: 100px;
@@ -32,15 +35,26 @@
     font-size: 22px;
     font-weight: bold;
 }
-.AreaServicesPai{
+.NewService{
+    height:100px;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 30%;
+    top: 0;
+    right:0;
+    transition: all ease 0.5s;
+    margin-top: 60px;
+    margin-right: 3px;
+    margin-left: 3px;
+    background-color: #fff;
+    border-radius: 10px;
 }
 .AreaServices{
     overflow-y: auto;
     flex: 1;
+    transition: all ease 0.5s;
 }
 .AreaServices::-webkit-scrollbar{
     width: 6px;

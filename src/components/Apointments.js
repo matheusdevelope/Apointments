@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import './Apointments.css'
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
-export default ()=>{ 
+export default ({showApointments})=>{ 
+    const [show,setShow]=useState(false)
+    const handleNewService = ()=>{setShow(show?false:true)}
     const [services, setServices] = useState ([])
     useEffect(()=>{
         fetch('http://26.48.46.50:3200/services')
@@ -10,13 +13,20 @@ export default ()=>{
         setServices(data)})
     },[])
 return( 
-<div className='ContentArea'>
+<div className='ContentArea 'style={{top: showApointments?0:-1000}}>
     <div className='Header'>
         <a>AGENDAMENTOS</a>
+        <div onClick={handleNewService} className='HeaderBNTAdd'> 
+            <AddCircleIcon style={{color:'#919191', viewBox:'0 0 50 50'}}/> 
+        </div>
     </div>
-    <div className='Area'>
-    <div className='AreaServicesPai'>
-    <div className='AreaServices'>
+    
+    <div className='AreaServices' style={{marginTop: show?105:0}}>
+    <div className='NewService' style={{top: show?0:-500}}>
+        <div>
+            Adicionar Services
+        </div>
+    </div>
         {data.map((service)=>(
         <div className='ServiceArea' key={service.id}>
         <a className='Text'>Agendamento Nº; {service.id}</a>
@@ -24,17 +34,7 @@ return(
         <a className='Text'>Observação{service.observation}</a>
         <a className='Text'>Status Agendamento {service.status}</a>
         <a className='Text'>Data Registro: {service.createdAt}</a>
-        </div>))}
-    </div>
-    </div>
-    <div className='AreaBox'>
-        <div className='Box1'>
-????????????
-        </div>
-        <div className='Box2'>
-//////////
-        </div>
-    </div>
+        </div>))}   
     </div>
 </div>
 )}

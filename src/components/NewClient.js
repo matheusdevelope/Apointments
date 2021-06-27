@@ -32,8 +32,6 @@ export default ({show, setShow, setClients})=>{
    setClients = true
     }
     
-    
-
     return(
         <div className='NewClient' style={{left: show?0:-500}}>
             <div className='NewClientHead'>
