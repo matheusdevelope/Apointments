@@ -34,7 +34,7 @@ export default ()=>{
             return res.json()
         })
         .then(data=>{
-            setClients(data)
+         setClients(data)
         })
     },[shownewclient])
 
@@ -62,10 +62,11 @@ export default ()=>{
         <SearchIcon fontSize="small" style={{color:'#919191', height:'20px', width:'20px'}}/>
         <input type="search" placeholder="Procurar Cliente" 
         value={search} onChange={(ev)=>setSearch(ev.target.value)}/>
-        </div>
         <div onClick={handleOpenNewClient} className='HeaderBNTAdd'> 
             <AddCircleIcon style={{color:'#919191', viewBox:'0 0 50 50'}}/> 
             </div>
+        </div>
+        
       </div> 
     <div className='ClientList'>
         {clientsFiltered.map((item,key)=>(
@@ -93,3 +94,4 @@ export default ()=>{
 </div>
   )
 }
+

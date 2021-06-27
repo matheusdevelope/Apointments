@@ -4,10 +4,7 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 export default ({data, id})=>{
-    const sendWhats =()=>{
-        <a target="" href="https://api.whatsapp.com/send?phone=5593991435952&text=Oi,%20Teste"></a>
-    
-    }
+ 
     const [servicesclient, setServicesClient] = useState([])
     useEffect(()=>{
       fetch(`http://26.48.46.50:3200/servicesbyclient/${id}`)

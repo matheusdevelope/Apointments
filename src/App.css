@@ -5,9 +5,8 @@ background-color: #fff;
 margin: 0;
 font-family: 'Segoe UI', Helvetica Neue, Helvetica, Lucida Grande, Arial;
 }
-
 .SideBar{
-width: 35%;
+width: 30%;
 max-width: max-content 400px;
 display: flex;
 flex-direction: column;
@@ -58,7 +57,6 @@ justify-content: center;
   align-items: center;
   cursor: pointer;
 }
-
 .Search{
 background-color: #f6f6f6;
 border-bottom: 1px solid #eee;
@@ -67,8 +65,8 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 0 4%;
-
-}
+width: 100%;
+} 
 .SearchInput{
 background-color: #fff;
 height: 30px;
@@ -77,7 +75,7 @@ display:flex;
 align-items: center;
 padding-left: 10px;
 flex: 1;
-
+width: 100%;
 }
 .SearchInput input{
 flex: 1;
@@ -86,6 +84,7 @@ outline: 0;
 background-color: transparent;
 margin-left: 10px;
 margin-right: -20px;
+width: 100%;
 }
 .HeaderBNTAdd{
   height: 40px;
@@ -96,7 +95,6 @@ margin-right: -20px;
   display: flex;
   cursor: pointer;
  
-  
 }
 .ClientList{
   flex: 1;
@@ -110,10 +108,8 @@ margin-right: -20px;
 .ClientList::-webkit-scrollbar-thumb{
   background-color: rgba(0, 0, 0, 0.335);
 }
-
 .ContentArea{
 flex: 1;
-
 } 
 .Intro{
   flex: 1;
