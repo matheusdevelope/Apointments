@@ -1,0 +1,70 @@
+ 
+.ContentArea{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 30%;
+    top: 0;
+    right:0;
+    transition: all ease 0.3s;
+    background-color: #ededed;
+}
+.ServiceArea{ 
+    height: 100px;
+    background-color: #fff;
+    margin: 0px 3px 5px 3px;
+    border-radius: 15px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+} 
+.ServiceArea a {
+    font-size: 12px;
+}
+.Header{
+    height: 60px;
+    border-bottom:#eee ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+} 
+.Header a{
+    font-size: 22px;
+    font-weight: bold;
+}
+.NewService{
+    height:100px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    left: 30%;
+    top: 0;
+    right:0;
+    transition: all ease 0.5s;
+    margin-top: 60px;
+    margin-right: 3px;
+    margin-left: 3px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.AreaServices{
+    overflow-y: auto;
+    flex: 1;
+    transition: all ease 0.5s;
+}
+.AreaServices::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+}
+.AreaServices::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.335);
+}
+.AreaBox{
+    width: 50%;
+    height: 100%;
+    background-color: thistle;
+}
