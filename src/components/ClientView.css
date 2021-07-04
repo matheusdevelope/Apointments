@@ -12,6 +12,18 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
+    border-bottom: 1px solid #000;
+  }
+  .Name{
+    display: flex;
+    flex-direction: column;
+  }
+  .Name a{
+    font-size: 17px;
+    font-weight: bold;
+  }
+  .A2 {
+    font-size: 11px;
   }
   .HeaderButtons{
   display: flex;
@@ -25,6 +37,23 @@
     align-items: center;
     cursor: pointer;
   }
+.HeaderBNT a{
+  margin: 0;
+}
+.ServiceArea{ 
+  height: 100px;
+  background-color: #fff;
+  margin: 4px 4px 0px 3px;
+  border-radius: 15px;
+  padding: 5px;
+  display: flex;
+
+  flex-direction: column;
+} 
+.ServiceArea a {
+  font-size: 12px;
+
+}
   .ApointmentsArea{
       flex-direction: column;
       height: 100%;
@@ -36,7 +65,7 @@
 
 
   .ApointmentsArea::-webkit-scrollbar{
-    width: 6px;
+    width: 8px;
     height: 6px;
   
   }

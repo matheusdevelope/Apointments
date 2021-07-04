@@ -1,13 +1,16 @@
 import React, {useEffect, useState}from 'react'
 import './ClientView.css'
-import AddCircleIcon from '@material-ui/icons/AddCircle';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import EditClient from './EditClient';
+import EditIcon from '@material-ui/icons/Edit';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 export default ({data, id})=>{
- 
+    const [show, setShow] = useState(false)
     const [servicesclient, setServicesClient] = useState([])
+    const handleEditClient = ()=>{setShow(show?false:true)}
+    const text = 'Oi, tudo bem?'
+
     useEffect(()=>{
-      fetch(`http://26.48.46.50:3200/servicesbyclient/${id}`)
+      fetch(`http://localhost:3200/servicesbyclient/${id}`)
       .then(res => {
           return res.json()
       })
@@ -15,30 +18,31 @@ export default ({data, id})=>{
         setServicesClient(data)
       })
   },[id])
+
 return(
 
 <div className='ContentProfile'>
+    <EditClient show={show} setShow={setShow} data={data} nameInput={data.name}/>
     <div className='HeaderProfile'>
-        <div className='Name'> {data.name} </div>
+        <div className='Name'> 
+        <a>{data.name}</a>
+        {data.observation}
+        </div>
         <div className='HeaderButtons'>
-
             <div className='HeaderBNT' >
-            <a target="framename" href="https://api.whatsapp.com/send?phone=5593991435952&text=Oi,%20Teste">
-                <WhatsAppIcon style={{color:'#00BA31', }} fontSize='large'/>
+            <a target="framename" href={`https://api.whatsapp.com/send?phone=55${data.phone}&text=${text}`}>
+                <WhatsAppIcon style={{color:'#00BA31', }} />
             </a>
             </div>
-            <div className='HeaderBNT'>
-                <AddCircleIcon style={{color:'#919191'}} />
-            </div>
 
-            <div className='HeaderBNT'>
-                <MoreVertIcon style={{color:'#919191'}} />
+            <div className='HeaderBNT' onClick={handleEditClient}>
+               <a> <EditIcon style={{color:'#011E2D'}} /></a>
             </div>
         </div>
-    </div> 
+    </div>  
     <div className='ApointmentsArea'>
             {servicesclient.map((service)=>(
-            <div className='AreaService' key={service.id}>
+            <div className='ServiceArea' key={service.id}>
             <a className='Text'>Agendamento Nº; {service.id}</a>
             <a className='Text'>Valor: R${service.value} </a>
             <a className='Text'>Observação{service.observation}</a>

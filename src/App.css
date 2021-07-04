@@ -28,8 +28,8 @@ header{
   
 }
 .HeaderAvatar{
-  height: 50%;
-  width: 20%;
+  height: 35px;
+  width: 35px;
   border-radius: 20px;
   cursor: pointer;
 }
@@ -40,25 +40,18 @@ header{
 }
 .HeaderButtons{
 margin: 0;
+
 justify-content: center;
   align-items: center;
 }
 .HeaderBNT{
-  height: 40px;
-  width: 40px;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
-.HeaderBNTHome{
-  height: 40px;
-  width: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
+
 .Search{
 background-color: #f6f6f6;
 border-bottom: 1px solid #eee;
@@ -68,12 +61,8 @@ justify-content: space-between;
 align-items: center;
 padding: 0 4%;
 width: 100%;
-<<<<<<< HEAD
-
-}
-=======
 } 
->>>>>>> 6568933d711bb560983f3ed7d6d2ed6d1095fcbb
+
 .SearchInput{
 background-color: #fff;
 height: 30px;
@@ -81,13 +70,8 @@ border-radius: 20px;
 display:flex;
 align-items: center;
 padding-left: 10px;
-<<<<<<< HEAD
-
-
-=======
 flex: 1;
 width: 100%;
->>>>>>> 6568933d711bb560983f3ed7d6d2ed6d1095fcbb
 }
 .SearchInput input{
 border: 0;
