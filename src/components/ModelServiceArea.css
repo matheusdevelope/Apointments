@@ -140,7 +140,12 @@ input{
     color: rgb(102, 102, 102);
     font-weight: bold;
 }
-
+.AreaDateHour{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    
+}
 
 
 

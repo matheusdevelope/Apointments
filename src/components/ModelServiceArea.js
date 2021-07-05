@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import InputMask from "react-input-mask";
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 import './ModelServiceArea.css'
@@ -12,18 +13,21 @@ const [item, setItem] = useState([])
 const [show, setShow] = useState(false)
 const [response, setResponse] = useState()
 //inputs
-const [codclient,setCodClient] = useState('')
+const [codclient,setCodClient] = useState()
 const [valueInput,setValueInput]=useState()
-const [obsInput,setObsInput]=useState('')
-const [statusInput,setStatusInput]=useState('')
-
+const [obsInput,setObsInput]=useState()
+const [statusInput,setStatusInput]=useState()
+const [dtMarcadaInput,setDtMarcadaInput]=useState()
+const [hrMarcadaInput,setHrMarcadaInput]=useState()
+const [codCatInput, setCodCatInput] = useState()
 let _data = {
     client_id: codclient,
     observation: obsInput, 
     value:valueInput,
     status:statusInput,
-    datamarcada: DtMarcadaInput,
-    hora
+    category:codCatInput,
+    datamarcada: dtMarcadaInput,
+    hour: hrMarcadaInput
 }
 
     
@@ -109,18 +113,21 @@ return (
     <div className='AreaView'>
         <div className='LineOne'>
             <div className='Area'>{Info1} <input
-              /></div>
+             value={codclient} onChange={(ev)=> setCodClient(ev.target.value)} /></div>
             <div className='Area'>{Info2} <input
-              value={search} onChange={(ev)=>
-              {setSearch(ev.target.value); setShow(true)}} /></div>
+              value={search} onChange={(ev)=> {setSearch(ev.target.value); setShow(true)}} /></div>
             <div className='Area'>{Info4} <input
-                /></div>
+                value={codCatInput} onChange={e=>{setCodCatInput(e.target.value)}}/></div>
             <div className='Area'>{Info5} <input className='InputObs'
-                /></div>
+            value={obsInput} onChange={e=>{setObsInput(e.target.value)}}    /></div>
         </div>
         <ProductsList/>
         <ListItens/>
         <div className='LineTwo'>
+            <div className='AreaDateHour'>
+                <InputMask mask="99999-999" placeholder='Data Agendada' value={dtMarcadaInput} onChange={e=>{setDtMarcadaInput(e.target.value)}}/>
+                <input placeholder='Hora Agendada' value={hrMarcadaInput} onChange={e=>{setHrMarcadaInput(e.target.value)}}/>
+            </div>
             <div className='AreaButton' onClick={()=>{handleAddNewService()}}>{Info6}</div>
         </div>
     </div>
