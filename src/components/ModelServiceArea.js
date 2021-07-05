@@ -22,8 +22,7 @@ let _data = {
     observation: obsInput, 
     value:valueInput,
     status:statusInput,
-    datamarcada: DtMarcadaInput,
-    hora
+    
 }
 
     
