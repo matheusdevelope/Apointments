@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { GetService } from './Api'
 import './Apointments.css'
 import ModelService from './ModelServiceArea'
 
@@ -17,7 +18,7 @@ export default ({showApointments, data})=>{
         status:statusInput
       } 
     const handleAddNewService = async ()=>{
-    const Post = await fetch('http://localhost:3200/services', {
+    const Post = await fetch(GetService, {
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'},
@@ -37,7 +38,7 @@ export default ({showApointments, data})=>{
     const handleNewService = ()=>{setShow(show?false:true)}
     const [services, setServices] = useState ([])
     useEffect(()=>{
-        fetch('http://localhost:3200/services')
+        fetch(GetService)
         .then(res => {return res.json()
          }).then(data=>{
         setServices(data)})

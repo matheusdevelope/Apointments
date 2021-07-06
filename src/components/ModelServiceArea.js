@@ -3,6 +3,7 @@ import InputMask from "react-input-mask";
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 import './ModelServiceArea.css'
+import { GetProdByServ, GetProducts, GetService } from './Api';
 
 
 export default ({Info1,Info2,Info4,Info5,Info6})=>{
@@ -14,7 +15,7 @@ const [show, setShow] = useState(false)
 const [response, setResponse] = useState()
 //inputs
 const [codclient,setCodClient] = useState()
-const [valueInput,setValueInput]=useState()
+const [valueInput,setValueInput]=useState(0)
 const [obsInput,setObsInput]=useState()
 const [statusInput,setStatusInput]=useState()
 const [dtMarcadaInput,setDtMarcadaInput]=useState()
@@ -28,9 +29,7 @@ let _data = {
     category:codCatInput,
     datamarcada: dtMarcadaInput,
     hour: hrMarcadaInput
-}
-
-    
+}   
 const ProductsList =()=> {return(
     <div className='SearchList' style={{left: show?0:-500}}>
         <div className='SearchListHeader'>PRODUTOS</div>
@@ -45,7 +44,6 @@ const ProductsList =()=> {return(
             </div>
 ))} </div>  
 )}
-
 const ListItens = ()=>{return(
     <div className='List'>
          {item.map((item, key) =>(
@@ -60,26 +58,24 @@ const ListItens = ()=>{return(
                 </div>
     ))} </div>
 )}
-
 const newItem = item.map((data)=>{
-    data.service_id = response }
+    data.service_id = response 
+    }
 )
-
 const handleSetItens = (data)=>{
     const prods = {
         product_id: data.id, value: data.value, name: data.name, service_id: 0 }
     setItem([...item, prods])
-}
+    setValueInput(valueInput + data.value)
 
+}
 const handleDeleteItem = (key) =>{
     let newItem = [...item]
     newItem.splice(key, 1)
     setItem(newItem)
 }
-
-
 const handleAddNewService = async ()=>{
-const Post = await fetch('http://localhost:3200/services', {
+const Post = await fetch(GetService, {
 headers: {
     'Accept': 'application/json',
     'Content-Type': 'application/json'},
@@ -92,7 +88,7 @@ handleAddNewProductByService()
 setItem([])
 }
 const handleAddNewProductByService = async()=>{
-    const Post = await fetch('http://localhost:3200/productbyservice', {
+    const Post = await fetch(GetProdByServ, {
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'},
@@ -102,13 +98,20 @@ const handleAddNewProductByService = async()=>{
     const retorno = await Post.json()
 }
 useEffect(()=>{
-    fetch('http://localhost:3200/products')
+    fetch(GetProducts)
     .then(res => {return res.json()
      }).then(data=>{
     setProducts(data)
 })     
 },[])
 
+const handleSetServiceInfo= ()=>{
+    const u = undefined
+    if(_data.client_id != u & _data.value != u) {
+        alert(_data.value)
+    }
+    else {alert("Preencha os campos!")}
+}
 return (
     <div className='AreaView'>
         <div className='LineOne'>
@@ -116,8 +119,6 @@ return (
              value={codclient} onChange={(ev)=> setCodClient(ev.target.value)} /></div>
             <div className='Area'>{Info2} <input
               value={search} onChange={(ev)=> {setSearch(ev.target.value); setShow(true)}} /></div>
-            <div className='Area'>{Info4} <input
-                value={codCatInput} onChange={e=>{setCodCatInput(e.target.value)}}/></div>
             <div className='Area'>{Info5} <input className='InputObs'
             value={obsInput} onChange={e=>{setObsInput(e.target.value)}}    /></div>
         </div>
@@ -125,10 +126,10 @@ return (
         <ListItens/>
         <div className='LineTwo'>
             <div className='AreaDateHour'>
-                <InputMask mask="99999-999" placeholder='Data Agendada' value={dtMarcadaInput} onChange={e=>{setDtMarcadaInput(e.target.value)}}/>
-                <input placeholder='Hora Agendada' value={hrMarcadaInput} onChange={e=>{setHrMarcadaInput(e.target.value)}}/>
+                <InputMask mask="99-99-9999" placeholder='Data Marcada' value={dtMarcadaInput} onChange={e=>{setDtMarcadaInput(e.target.value)}}/>
+                <InputMask mask="99:99" placeholder='Hora Marcada' value={hrMarcadaInput} onChange={e=>{setHrMarcadaInput(e.target.value)}}/>
             </div>
-            <div className='AreaButton' onClick={()=>{handleAddNewService()}}>{Info6}</div>
+            <div className='AreaButton' onClick={()=>{handleSetServiceInfo()}}>{Info6}</div>
         </div>
     </div>
 )

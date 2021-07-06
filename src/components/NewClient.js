@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './NewClient.css'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { GetClients } from './Api';
 
 export default ({show, setShow, setClients})=>{
     const handleClose = ()=>{setShow(false)}
@@ -16,7 +17,7 @@ export default ({show, setShow, setClients})=>{
       } 
 
     const addNewClient = async()=>{
-    const Post = await fetch('http://26.48.46.50:3200/clients', {
+    const Post = await fetch(GetClients, {
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'},

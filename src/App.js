@@ -9,6 +9,7 @@ import Apointments from './components/Apointments'
 import ClientView from './components/ClientView.js'
 import NewClient from './components/NewClient.js'
 import Menu from './components/Menu.js'
+import { GetClients } from './components/Api';
 
 
 export default ()=>{
@@ -30,7 +31,7 @@ export default ()=>{
   clients.filter(client => client.name.toLowerCase().includes(search.toLowerCase()))
 
   useEffect(()=>{
-        fetch('http://localhost:3200/clients')
+        fetch(GetClients)
         .then(res => {
             return res.json()
         })

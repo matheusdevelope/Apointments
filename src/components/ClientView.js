@@ -1,4 +1,5 @@
 import React, {useEffect, useState}from 'react'
+import {GetServByClient} from './Api'
 import './ClientView.css'
 import EditClient from './EditClient';
 import EditIcon from '@material-ui/icons/Edit';
@@ -10,7 +11,7 @@ export default ({data, id})=>{
     const text = 'Oi, tudo bem?'
 
     useEffect(()=>{
-      fetch(`http://localhost:3200/servicesbyclient/${id}`)
+      fetch(`${GetServByClient}${id}`)
       .then(res => {
           return res.json()
       })

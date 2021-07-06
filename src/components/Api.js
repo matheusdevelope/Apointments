@@ -1,16 +1,9 @@
 import React,{useState, useEffect} from 'react'
+const IpLocal = 'localhost:3200'
+const IpRemote = '25.95.109.190:3200' 
+export const GetClients = `http://${IpRemote}/clients`
+export const GetService = `http://${IpRemote}/services`
+export const GetServByClient = `http://${IpRemote}/servicesbyclient/`
+export const GetProdByServ = `http://${IpRemote}/productbyservice`
+export const GetProducts = `http://${IpRemote}/products`
 
-export const GetClients = ({setData})=>{
-const [clients, setClients] = useState([])
-  useEffect(()=>{
-        fetch('http://localhost:3200/clients')
-        .then(res => {
-            return res.json()
-        })
-        .then(data=>{
-         setClients(data)
-         setData(clients)
-        })
-        
-    },[])
-}
