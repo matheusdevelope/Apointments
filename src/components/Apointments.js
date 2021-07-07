@@ -4,38 +4,9 @@ import './Apointments.css'
 import ModelService from './ModelServiceArea'
 
 export default ({showApointments, data})=>{ 
-    const [codclient,setCodClient] = useState('')
-    const [serviceInput,setServiceInput]=useState()
-    const [valueInput,setValueInput]=useState()
-    const [obsInput,setObsInput]=useState('')
-    const [statusInput,setStatusInput]=useState('')
-
-    let _data = {
-        client_id: codclient,
-        product_id: serviceInput,
-        observation: obsInput, 
-        value:valueInput,
-        status:statusInput
-      } 
-    const handleAddNewService = async ()=>{
-    const Post = await fetch(GetService, {
-    headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'},
-    method: "POST",
-    body: JSON.stringify(_data)
-    }) 
-   const response = await Post.json()
-   handleNewService()
-   setCodClient()
-   setServiceInput('')
-   setObsInput('')
-   setValueInput('')
-   setStatusInput('')
-    }
-    
+ 
     const [show,setShow]=useState(false)
-    const handleNewService = ()=>{setShow(show?false:true)}
+
     const [services, setServices] = useState ([])
     useEffect(()=>{
         fetch(GetService)
@@ -49,7 +20,7 @@ export default ({showApointments, data})=>{
     },[showApointments])
  
 return( 
-<div className='ContentArea 'style={{top: showApointments?0:-1000}}>
+<div className='ContentArea 'style={{top: showApointments?-1000:0}}>
     <div className='Header'>
         <a>AGENDAMENTOS</a>
     </div>

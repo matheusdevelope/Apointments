@@ -3,7 +3,7 @@ import './NewClient.css'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { GetClients } from './Api';
 
-export default ({show, setShow, setClients})=>{
+export default ({show, setShow})=>{
     const handleClose = ()=>{setShow(false)}
     const [nameInput,setNameInput]=useState('')
     const [phoneInput,setPhoneInput]=useState('')
@@ -30,7 +30,7 @@ export default ({show, setShow, setClients})=>{
    setNameInput('')
    setPhoneInput('')
    setObsInput('')
-   setClients = true
+
     } 
     
     return(

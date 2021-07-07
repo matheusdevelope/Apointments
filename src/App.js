@@ -38,7 +38,7 @@ export default ()=>{
         .then(data=>{
          setClients(data)
         })
-    },[shownewclient])
+    },[shownewclient]) 
 
   return(
 <div className='AppWindow'>
