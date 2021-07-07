@@ -3,9 +3,9 @@ import { GetService } from './Api'
 import './Apointments.css'
 import ModelService from './ModelServiceArea'
 
-export default ({showApointments, data})=>{ 
+export default ({showApointments})=>{ 
  
-    const [show,setShow]=useState(false)
+    const [show,setShow]=useState(true)
 
     const [services, setServices] = useState ([])
     useEffect(()=>{
@@ -16,8 +16,7 @@ export default ({showApointments, data})=>{
     },[show])
 
     useEffect(()=>{
-        setShow(false)
-    },[showApointments])
+    },[show])
  
 return( 
 <div className='ContentArea 'style={{top: showApointments?-1000:0}}>
@@ -27,7 +26,7 @@ return(
     
     <div className='AreaServices'>
     <ModelService Info1='Cliente:' Info2='Serviço:'  
-    Info4='Operação:' Info5='Obs.:' Info6='Finalizar'  />
+    Info4='Operação:' Info5='Obs.:' Info6='Finalizar' setShow={setShow}  />
     
         {services.map((service)=>(
         <div className='ServiceArea' key={service.id}>

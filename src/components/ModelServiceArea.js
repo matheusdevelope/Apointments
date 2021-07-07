@@ -6,23 +6,22 @@ import './ModelServiceArea.css'
 import { GetProdByServ, GetProducts, GetService } from './Api';
  
 
-export default ({Info1,Info2,Info5,Info6})=>{
+export default ({Info1,Info2,Info5,Info6, setShow})=>{
+    const handleRefresh = ()=>{setShow(false);console.log("handle")}
 const [products, setProducts] = useState([])
 const [search, setSearch] = useState('')
 const filtered = products.filter(prod => prod.name.toLowerCase().includes(search.toLowerCase()))
 const [item, setItem] = useState([])
-const [show, setShow] = useState(false)
+const [showlist, setShowList] = useState(false)
 const [response, setResponse] = useState()
 //inputs
 const [codclient,setCodClient] = useState("")
 const [valueInput,setValueInput]=useState(0)
-const [valueItem,setValueItem]=useState(0)
 const [obsInput,setObsInput]=useState('')
 const [statusInput,setStatusInput]=useState("F")
 const [dtMarcadaInput,setDtMarcadaInput]=useState("")
 const [hrMarcadaInput,setHrMarcadaInput]=useState("")
 const [codCatInput, setCodCatInput] = useState("V")
-const [quantidade, setQuantidade] = useState(1)
 let _data = {
     client_id: codclient,
     observation: obsInput, 
@@ -33,7 +32,7 @@ let _data = {
     hour: hrMarcadaInput
 }   
 const ProductsList =()=> {return(
-    <div className='SearchList' style={{left: show?0:-500}}>
+    <div className='SearchList' style={{left: showlist?0:-500}}>
         <div className='SearchListHeader'>PRODUTOS</div>
         {filtered.map((data, key) =>(
             <div className={`SearchItemList` }
@@ -46,42 +45,42 @@ const ProductsList =()=> {return(
             </div>
 ))} </div>  
 )}
-
+const handleEdit = (e , key)=>{
+    const {name, value} = e.target;
+    const list = [...item];
+    list[key][name] = parseFloat(value);
+}
 
 const ListItens = ()=>{return(
     <div className='List'>
          {item.map((item, key) =>(
                 <div className='ListItem' key={key}>
                     <a>{item.name}</a>
-                    <div className='Value'>{item.value}
-                        <input  type="number" value={valueItem}
-                        onChange={e=>{setValueItem(e.target.value)}}/>
-                        <input  type="number" value={quantidade}
-                        onChange={e=>{setQuantidade(e.target.value)}}/>
+                    <div className='Value'>
+                <input  name='value' type='number' placeholder={item.value}
+                onChange={e=>{handleEdit(e, key)}}/>
+                
                     </div>
-                    <EditIcon fontSize='small' className='Icon'
-                    onClick={()=>{handleEditItem(item, key)}}/>
-                    <DeleteForeverIcon  fontSize='small' className='Icon'
-                    onClick={()=>{handleDeleteItem(key)}}/>
+                    <EditIcon fontSize='small' className='Icon'/>
+                    <DeleteForeverIcon  fontSize='small' className='Icon'onClick={()=>{handleDeleteItem(key)}}/>
                 </div>
     ))} </div>
 )}
+
 const newItem = item.map((data)=>{
     data.service_id = response 
     }
 )
-const handleEditItem = (item, key)=>{
-    console.log(item)
-    item.quantidade = quantidade
-    item.value = valueItem
-    console.log(item)
-}
+
 const handleSetItens = (data)=>{
     const prods = {
-        quantidade:quantidade,    product_id: data.id, value: data.value, name: data.name, service_id: 0 }
+        quantidade:1,   
+        product_id: data.id,
+        value: data.value, 
+        name: data.name, 
+        service_id: 0 
+    }
     setItem([...item, prods])
-    setValueInput(valueInput + data.value)
-
 }
 const handleDeleteItem = (key) =>{
     let newItem = [...item]
@@ -89,6 +88,7 @@ const handleDeleteItem = (key) =>{
     setItem(newItem)
 }
 const handleAddNewService = async ()=>{
+
 const Post = await fetch(GetService, {
 headers: {
     'Accept': 'application/json',
@@ -107,6 +107,7 @@ setStatusInput("F")
 setCodCatInput("V")
 setDtMarcadaInput("")
 setHrMarcadaInput("")
+handleRefresh()
 }
 const handleAddNewProductByService = async()=>{
     const Post = await fetch(GetProdByServ, {
@@ -127,17 +128,22 @@ useEffect(()=>{
 },[])
 
 const handleSetServiceInfo= ()=>{
-    setShow(false)
+    var soma =0
+    for( var cont = 0; cont < item.length ; cont++){
+        soma += item[cont].value }  
+    _data.value= soma
+    setShowList(false)
+    handleRefresh()
     if(_data.client_id != "" & _data.value != 0) {   //obriga a preencher os campos
         if (_data.datamarcada  == "" & _data.hour == ""){    
             handleAddNewService()
-            setShow(false)
-     
+            setShowList(false)
         }
         else{        // se data e hora estiverem preenchidas define categoria como agendamento e muda status para "A"
             _data.category ="A"
             _data.status = "A"
             handleAddNewService()
+            setShowList(false)
         }
     }
     else {alert("NOPE :)")}
@@ -149,7 +155,7 @@ return (
             <div className='Area'>{Info1} <input
              value={codclient} onChange={(ev)=> setCodClient(ev.target.value)} /></div>
             <div className='Area'>{Info2} <input
-              value={search} onChange={(ev)=> {setSearch(ev.target.value); setShow(true)}} /></div>
+              value={search} onChange={(ev)=> {setSearch(ev.target.value); setShowList(true)}} /></div>
             <div className='Area'>{Info5} <input className='InputObs'
             value={obsInput} onChange={e=>{setObsInput(e.target.value)}}    /></div>
             <div className='Area'>
@@ -158,7 +164,7 @@ return (
             </div>
         </div>
         <div className='LineTwo'>
-            <button  onClick={()=>{handleSetServiceInfo()}}>{Info6}</button>
+            <button className='Button' onClick={()=>{handleSetServiceInfo()}}>{Info6}</button>
             <ListItens/>
         </div>
     </div>
@@ -166,3 +172,11 @@ return (
 }
 
 
+
+
+/**
+ 
+ <input name='quantidade' type='number' placeholder={item.quantidade}
+                onChange={e=>{handleEdit(e, key)}}/> 
+ * 
+ */
