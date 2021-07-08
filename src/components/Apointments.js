@@ -19,7 +19,7 @@ export default ({showApointments})=>{
     },[show])
  
 return( 
-<div className='ContentArea 'style={{top: showApointments?-1000:0}}>
+<div className='ContentArea 'style={{top: showApointments?0:-1000}}>
     <div className='Header'>
         <a>AGENDAMENTOS</a>
     </div>
