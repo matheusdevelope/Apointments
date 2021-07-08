@@ -46,15 +46,16 @@ input{
     outline: 0;
     width: 100%;
 }
-.button{
+.Button{
     align-items: center;
     justify-content: flex-end;
     background-color: rgba(77, 141, 224, 0.904);
     border-radius: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px 0 15px ;
     font-weight: bold;
     color: #fff;
+    border: 1px solid #000;
+    width: 100px;
 }
 
 .List{
