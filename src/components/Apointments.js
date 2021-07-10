@@ -26,7 +26,8 @@ return(
     
     <div className='AreaServices'>
     <ModelService Info1='Cliente:' Info2='Serviço:'  
-    Info4='Operação:' Info5='Obs.:' Info6='Finalizar' setShow={setShow}  />
+    Info4='Operação:' Info5='Obs.:' Info6='Finalizar'
+    show={show} setShow={setShow}  />
     
         {services.map((service)=>(
         <div className='ServiceArea' key={service.id}>

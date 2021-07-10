@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './NewClient.css'
+import InputMask from "react-input-mask";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { GetClients } from './Api';
 
-export default ({show, setShow})=>{
+export default ({search,show, setShow})=>{
     const handleClose = ()=>{setShow(false)}
     const [nameInput,setNameInput]=useState('')
     const [phoneInput,setPhoneInput]=useState('')
     const [obsInput,setObsInput]=useState('')
+
+    
     
 
     let _data = {
@@ -44,7 +47,7 @@ export default ({show, setShow})=>{
             <div className='NewClientInputArea'>
                 <div className='ViewInput'>
                     <a>Nome Completo:</a>
-                    <input type="text" placeholder="Insira o nome"
+                    <input type="text" placeholder='Insira o nome'
                     value={nameInput} onChange={(ev)=>setNameInput(ev.target.value)}/>
                 </div>
                 <div className='ViewInput'>
@@ -59,7 +62,7 @@ export default ({show, setShow})=>{
                    
                 </div>
             </div>
-            <div onClick={()=>{addNewClient()}}  tabIndex="0" className='NewClientSave'><a>Salvar</a></div>
+            <button onClick={()=>{addNewClient()}}  tabIndex="0" className='NewClientSave'><a>Salvar</a></button>
         </div>
     )
 }

@@ -4,10 +4,10 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 import './ModelServiceArea.css'
 import { GetProdByServ, GetProducts, GetService } from './Api';
- 
+import ProductsList2 from './Products'
 
-export default ({Info1,Info2,Info5,Info6, setShow})=>{
-    const handleRefresh = ()=>{setShow(false);console.log("handle")}
+export default ({Info1,Info2,Info5,Info6, show,setShow})=>{
+const handleRefresh = ()=>{setShow(show?false:true)}
 const [products, setProducts] = useState([])
 const [search, setSearch] = useState('')
 const filtered = products.filter(prod => prod.name.toLowerCase().includes(search.toLowerCase()))
@@ -33,17 +33,17 @@ let _data = {
 }   
 const ProductsList =()=> {return(
     <div className='SearchList' style={{left: showlist?0:-500}}>
-        <div className='SearchListHeader'>PRODUTOS</div>
-        {filtered.map((data, key) =>(
-            <div className={`SearchItemList` }
-            key={data.id}
-            onClick={()=>{handleSetItens(data); setSearch('')}}>
-                <a>{data.name.toUpperCase()}</a>
-                <div className='SearchItemLine2'>
-                <a>R$: {data.value}</a>
-                </div>
+    <div className='SearchListHeader'>PRODUTOS</div>
+    {filtered.map((data, key) =>(
+        <div className={`SearchItemList` }
+        key={data.id}
+        onClick={()=>{handleSetItens(data); setSearch('')}}>
+            <a>{data.name.toUpperCase()}</a>
+            <div className='SearchItemLine2'>
+            <a>R$: {data.value}</a>
             </div>
-))} </div>  
+        </div>
+))} </div> 
 )}
 const handleEdit = (e , key)=>{
     const {name, value} = e.target;
@@ -176,7 +176,5 @@ return (
 
 /**
  
- <input name='quantidade' type='number' placeholder={item.quantidade}
-                onChange={e=>{handleEdit(e, key)}}/> 
- * 
+ 
  */
