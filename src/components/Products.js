@@ -89,7 +89,7 @@ const handleVerification =()=>{
             onChange={(e)=>{setObs(e.target.value)}}/>
 
             <div className='TextAddProd'>Serviço?
-            <input type="checkbox" defaultChecked={checked}
+            <input className="InputCheckBox" type="checkbox" defaultChecked={checked}
             onChange={handleChecked} />
             </div>
 
@@ -98,7 +98,6 @@ const handleVerification =()=>{
         </div>
     )
 }
-
 return(
    
 <div className='boxProducts' style={{top: showProducts?0:-2000}}>

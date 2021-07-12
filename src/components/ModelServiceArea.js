@@ -37,7 +37,8 @@ const prodEdit = item2.map((obj) => {
         value: obj.value, 
         name: obj.name, 
         service_id: obj.service_id,
-        category:obj.category
+        category:obj.category,
+        status:obj.status
         }
         arraydata =([...arraydata, data])
 })
@@ -54,7 +55,8 @@ const handleSetItens = (data)=>{
         value: data.value, 
         name: data.name, 
         service_id: 0,
-        category:data.category
+        category:data.category,
+        status:"A" //"aberto", aguarda finalizar agendamento
     }
     setItem([...item, prods])
 }
@@ -78,7 +80,7 @@ let _data = {
     datamarcada: dtMarcadaInput,
     hour: hrMarcadaInput
 }  
-
+ 
 const ProductsList =()=> {return(
     <div className='SearchList' style={{left: showlist?0:-500}}>
     <div className='SearchListHeader'>PRODUTOS</div>
@@ -202,15 +204,15 @@ return (
     <div className='AreaView'>
         <ProductsList/>
         <div className='LineOne'>
-            <div className='Area'>{Info1} <input
+            <div className='Area'><input placeholder={Info1}
              value={codclient} onChange={(ev)=> setCodClient(ev.target.value)} /></div>
-            <div className='Area'>{Info2} <input
+            <div className='Area'><input placeholder={Info2}
               value={search} onChange={(ev)=> {setSearch(ev.target.value); setShowList(true)}} /></div>
-            <div className='Area'>{Info5} <input className='InputObs'
+            <div className='Area'><input placeholder={Info5} className='InputObs'
             value={obsInput} onChange={e=>{setObsInput(e.target.value)}}    /></div>
             <div className='Area'>
-            <InputMask mask="99-99-9999" placeholder='Data Marcada' value={dtMarcadaInput} onChange={e=>{setDtMarcadaInput(e.target.value)}}/>
-            <InputMask mask="99:99" placeholder='Hora Marcada' value={hrMarcadaInput} onChange={e=>{setHrMarcadaInput(e.target.value)}}/>
+            <InputMask mask="99-99-9999" placeholder='Dia' value={dtMarcadaInput} onChange={e=>{setDtMarcadaInput(e.target.value)}}/>
+            <InputMask mask="99:99" placeholder='Hora' value={hrMarcadaInput} onChange={e=>{setHrMarcadaInput(e.target.value)}}/>
             </div>
         </div>
         <div className='LineTwo'>

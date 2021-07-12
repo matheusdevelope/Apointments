@@ -11,6 +11,16 @@
 } 
 input{
     font-size: 16px;
+    
+}
+input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+input.InputCheckBox{
+    height: 15px;
+    width: 15px;
 }
 .headerProd{
     background-color: #ededed;
@@ -31,7 +41,8 @@ input{
     width: 100%;
 }
 .CheckInput{
-width: 10px;
+width: 13px;
+height: 13px;
 align-items: center;
 justify-content: center;
 display: flex;

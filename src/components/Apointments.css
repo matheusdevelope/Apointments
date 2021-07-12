@@ -54,6 +54,9 @@ a.TextObs{
 .Area2Service::-webkit-scrollbar{
     display: none;
 }
+.Area2Service div{
+border-bottom: 1px solid rgb(224, 224, 224);
+}
 a.TextObs::-webkit-scrollbar{
     display: none;
 }
@@ -63,6 +66,7 @@ a.TextObs::-webkit-scrollbar{
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+
 }
 .Area3Service button{
     border: none;
@@ -70,7 +74,7 @@ a.TextObs::-webkit-scrollbar{
     height: 20px;
     margin: 0;
     background-color: transparent;
-
+  
 }
 .AreaAddNewService{
     flex-direction: row;

@@ -1,0 +1,124 @@
+.bodyProvisorio{
+    background-color: rgb(68, 68, 68);
+    height: 100vh;
+    width: 100%;
+}
+.bodyRegister{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    min-height: 300px;
+    max-height: 400px;
+    width: 50%;
+    max-width: 550px;
+    min-width: 450px;
+    border-radius: 12px;
+    height: 350px;
+  
+}
+.headerRegister{
+    background-color: transparent;
+    display: flex;
+    height: 30px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    border-bottom: 1px solid rgb(206, 206, 206);
+}
+.headerRegister button{
+    background-color: transparent;
+    border: 0;
+    outline: unset;
+    width: 20px;
+    padding: 0;
+
+}
+.HeaderRegister2{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.InfoClientRegister{
+    padding: 0 3px;
+}
+.NameClientRegister{
+    font-size: 16px;
+    font-weight: bold;
+}
+.ObsRegister{
+    font-size: 13px;
+}
+.PaiScroll{
+  height: 225px;
+  overflow-y: auto;
+  transition: all ease 0.5s;
+  border: 1px  solid rgb(206, 206, 206);
+}
+.ListItensServiceRegister{
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.PaiScroll::-webkit-scrollbar{
+    width: 5px;
+    height: 6px;
+    
+}
+.PaiScroll::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.603);
+    border-radius: 2px;
+}
+.BoxItensRegister{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin:3px 3px 0 3px;
+    border-radius: 3px;
+    background-color: rgb(240, 240, 240);
+}
+.BoxItensRegister a{
+    font-size: 14px;
+}
+.BoxItensRegister div{
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+   
+}
+.PagamentoRegister{
+    display: flex;
+    flex-direction: row;
+    
+    padding: 8px 3px 10px 3px;
+    justify-content: space-between;
+}
+.PagamentoRegister div{
+    padding: 0;
+    margin: 0;
+    width: 90px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.PagamentoRegister input{
+    padding: 0;
+    margin: 0;
+    width:100%;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgb(238, 238, 238);
+}
+.PagamentoRegister button{
+    background-color: transparent;
+    border: 1px solid rgb(192, 192, 192) ;
+    background-color: rgb(255, 255, 255);
+    outline: unset;
+    padding: 0;
+    border-radius: 3px;
+    font-weight: bold;
+    width: 50px;
+}

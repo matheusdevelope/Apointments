@@ -32,6 +32,8 @@ export default ()=>{
   const handleOnClickClient = (key)=>{
     setActiveClient(clientsFiltered[key])
     setShowApointments(false)
+    setShowProducts(false)
+
   }
   useEffect(()=>{
         fetch(GetClients)
