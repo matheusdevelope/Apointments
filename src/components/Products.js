@@ -21,7 +21,6 @@ const handleChecked2 = ()=>{
     if(checked1){setChecked2(false)}else{
     setChecked2(!checked2);setFilter(!checked2?"M":'')}}
 
-
 const filtercategory = 
 products.filter(prod => prod.category.toLowerCase().includes(filter.toLowerCase()))
 

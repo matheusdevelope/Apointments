@@ -89,7 +89,7 @@ export default ()=>{
     <div className='ContentArea'>
     <Products showProducts={showProducts} setShowProducts={setShowProducts} />
     <Apointments showApointments={showapointments} 
-    setShowApointments={setShowApointments}
+    setShowApointments={setShowApointments } showMenu={shownewmenu}
     data = {clients}/>
        {activeclient.id !== undefined &&
        <ClientView 

@@ -9,6 +9,9 @@
     height: 100%;
    
 } 
+input{
+    font-size: 16px;
+}
 .headerProd{
     background-color: #ededed;
     height: 61px;
@@ -37,7 +40,7 @@ margin: 0 3px 0 5px;
 }
 .FilterSelector{
     font-size: 15px;
-    flex: 1;
+    flex: 1; 
     width: 100%;
 }
 .AreaAddProduct{
