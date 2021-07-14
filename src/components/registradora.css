@@ -1,3 +1,10 @@
+button{
+    cursor: pointer;
+}
+a, div{
+    cursor:default;
+}
+
 .bodyProvisorio{
     background-color: rgb(68, 68, 68);
     height: 100vh;
@@ -13,9 +20,7 @@
     width: 50%;
     max-width: 550px;
     min-width: 450px;
-    border-radius: 12px;
-    height: 350px;
-  
+    border-radius: 12px;  
 }
 .headerRegister{
     background-color: transparent;
@@ -26,6 +31,9 @@
     align-items: center;
     padding: 0 8px;
     border-bottom: 1px solid rgb(206, 206, 206);
+}
+a.Title{
+    font-weight: bold;
 }
 .headerRegister button{
     background-color: transparent;
@@ -121,4 +129,40 @@
     border-radius: 3px;
     font-weight: bold;
     width: 50px;
+}
+
+.ListPagamento ul{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background-color: white;
+    width: 90px;
+    border-radius: 5px;
+    
+}
+a.TextFormSelected{
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    width: 100%;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.479);
+    background-color: rgb(236, 236, 236);
+}
+.ListPagamento ul li{
+    list-style-type: none;
+    display: none;
+    padding: 0;
+    margin: 0;
+    width: 90;
+}
+.ListPagamento ul:hover li {
+    display: block; 
+}
+li a{
+    color: rgb(31, 31, 31);
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 3px;
+    transition:  .3s;
 }
